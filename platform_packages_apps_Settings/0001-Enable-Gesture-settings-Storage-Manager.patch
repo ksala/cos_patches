@@ -1,0 +1,28 @@
+From 5ce7b25e0e8fd3c7549cd296b6b273494656f091 Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Tue, 4 Apr 2017 14:21:51 +0200
+Subject: [PATCH] Enable Gesture settings & Storage Manager
+
+---
+ res/values/config.xml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/res/values/config.xml b/res/values/config.xml
+index 75d8697b9..8331d8099 100755
+--- a/res/values/config.xml
++++ b/res/values/config.xml
+@@ -53,9 +53,9 @@
+     <string name="gesture_double_twist_sensor_vendor" translatable="false"></string>
+ 
+     <!-- When true enable gesture setting. -->
+-    <bool name="config_gesture_settings_enabled">false</bool>
++    <bool name="config_gesture_settings_enabled">true</bool>
+ 
+     <!-- If the Storage Manager settings are enabled. -->
+-    <bool name="config_storage_manager_settings_enabled">false</bool>
++    <bool name="config_storage_manager_settings_enabled">true</bool>
+ 
+ </resources>
+-- 
+2.12.1
+

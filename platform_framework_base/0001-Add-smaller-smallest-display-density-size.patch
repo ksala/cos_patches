@@ -1,0 +1,50 @@
+From b58f6c3cfb08b1cbcafd65f7e8cd3cade7cf163c Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Tue, 4 Apr 2017 12:24:29 +0200
+Subject: [PATCH] Add smaller/smallest display density size
+
+---
+ packages/SettingsLib/res/values/strings.xml                           | 4 ++++
+ .../src/com/android/settingslib/display/DisplayDensityUtils.java      | 4 +++-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/packages/SettingsLib/res/values/strings.xml b/packages/SettingsLib/res/values/strings.xml
+index 072fe687d74..fdf0b50b3e5 100644
+--- a/packages/SettingsLib/res/values/strings.xml
++++ b/packages/SettingsLib/res/values/strings.xml
+@@ -844,6 +844,10 @@
+     <!-- HTTP proxy settings. The hint text field for the hostname. -->
+     <string name="proxy_hostname_hint" translatable="false">proxy.example.com</string>
+ 
++    <!-- Description for the screen zoom level that makes interface elements smallest. [CHAR LIMIT=24] -->
++    <string name="screen_zoom_summary_smallest">Smallest</string>
++    <!-- Description for the screen zoom level that makes interface elements smaller. [CHAR LIMIT=24] -->
++    <string name="screen_zoom_summary_smaller">Smaller</string>
+     <!-- Description for the screen zoom level that makes interface elements small. [CHAR LIMIT=24] -->
+     <string name="screen_zoom_summary_small">Small</string>
+     <!-- Description for the device's default screen zoom level. [CHAR LIMIT=24] -->
+diff --git a/packages/SettingsLib/src/com/android/settingslib/display/DisplayDensityUtils.java b/packages/SettingsLib/src/com/android/settingslib/display/DisplayDensityUtils.java
+index af8fd4c46a6..0c45b7bb72b 100644
+--- a/packages/SettingsLib/src/com/android/settingslib/display/DisplayDensityUtils.java
++++ b/packages/SettingsLib/src/com/android/settingslib/display/DisplayDensityUtils.java
+@@ -43,7 +43,7 @@ public class DisplayDensityUtils {
+     private static final float MIN_SCALE_INTERVAL = 0.09f;
+ 
+     /** Minimum density scale. This is available on all devices. */
+-    private static final float MIN_SCALE = 0.85f;
++    private static final float MIN_SCALE = 0.70f;
+ 
+     /** Maximum density scale. The actual scale used depends on the device. */
+     private static final float MAX_SCALE = 1.50f;
+@@ -59,6 +59,8 @@ public class DisplayDensityUtils {
+      * largest.
+      */
+     private static final int[] SUMMARIES_SMALLER = new int[] {
++            R.string.screen_zoom_summary_smallest,
++            R.string.screen_zoom_summary_smaller,
+             R.string.screen_zoom_summary_small
+     };
+ 
+-- 
+2.12.1
+

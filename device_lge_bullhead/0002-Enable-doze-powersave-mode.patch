@@ -1,0 +1,26 @@
+From d9512e147c23c6a620ad3eb0676249b7eabf6dcd Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Tue, 4 Apr 2017 10:48:30 +0200
+Subject: [PATCH 2/3] Enable doze powersave mode
+
+---
+ overlay/frameworks/base/core/res/res/values/config.xml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/overlay/frameworks/base/core/res/res/values/config.xml b/overlay/frameworks/base/core/res/res/values/config.xml
+index a3de364..fc01afd 100644
+--- a/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -349,6 +349,9 @@
+     <!-- Enable Night Display, which requires HWC 2.0. -->
+     <bool name="config_nightDisplayAvailable">true</bool>
+ 
++    <!-- Enable doze powersaving mode -->
++    <bool name="config_enableAutoPowerModes">true</bool>
++
+     <!-- Values for GPS configuration -->
+     <string-array translatable="false" name="config_gpsParameters">
+         <item>SUPL_HOST=supl.google.com</item>
+-- 
+2.12.1
+
