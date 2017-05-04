@@ -25,8 +25,8 @@ index 30a337d..16436e2 100644
    <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
    <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
    <project path="vendor" name="vendor" remote="gitlab" />
-+  <project path="external/microg" name="platform_external_Microg" remote="ksala" />
-+  <project path="external/unifiednlp" name="platform_external_UnifiedNlp" remote="ksala" />
++  <project path="external/MicroG" name="platform_external_Microg" remote="ksala" />
++  <project path="external/Unifiednlp" name="platform_external_UnifiedNlp" remote="ksala" />
  
  </manifest>
 -- 
