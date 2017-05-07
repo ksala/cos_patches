@@ -1,0 +1,26 @@
+From fa5c33821b3e97807b6da98a3b485eff25eeaceb Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Sun, 7 May 2017 18:19:07 +0200
+Subject: [PATCH] Add key
+
+---
+ app/src/main/java/org/fdroid/fdroid/privileged/ClientWhitelist.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/app/src/main/java/org/fdroid/fdroid/privileged/ClientWhitelist.java b/app/src/main/java/org/fdroid/fdroid/privileged/ClientWhitelist.java
+index b182f77..67aacce 100644
+--- a/app/src/main/java/org/fdroid/fdroid/privileged/ClientWhitelist.java
++++ b/app/src/main/java/org/fdroid/fdroid/privileged/ClientWhitelist.java
+@@ -37,7 +37,8 @@ public class ClientWhitelist {
+             new Pair<>("org.fdroid.fdroid", "6425C9DE6219056CCE62F73E7AD9F92C940B83BAC1D5516ABEBCE1D38F85E4CF"), // marlin releasekey
+             new Pair<>("org.fdroid.fdroid", "CC1E06EAD3E9CA2C4E46073172E92BAD4AFB02D4D21EDDC3F4D9A50C2FBD639D"), // marlin platform
+             new Pair<>("org.fdroid.fdroid", "B919FFF979EAC18DF3E65C6D2EBE63F393F11B4BAB344ADE255B2465F49836BC"), // sailfish releasekey
+-            new Pair<>("org.fdroid.fdroid", "1C3FBC736E9B7B09E309B8379FF954BF5BD9F95ED399741D7D1D3A42F8ADB757") // sailfish platform
++            new Pair<>("org.fdroid.fdroid", "1C3FBC736E9B7B09E309B8379FF954BF5BD9F95ED399741D7D1D3A42F8ADB757"), // sailfish platform
++	    new Pair<>("org.fdroid.fdroid", "D23109BA11E10C7CFB0B2A40F03EAB1174B8FA7359A3CF117A33BA2869E21640")  // My Personal Key
+     ));
+ 
+ }
+-- 
+2.12.2
+
