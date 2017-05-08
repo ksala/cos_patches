@@ -1,0 +1,28 @@
+From 8af03b95a6fec2dd86d6ee5a785a62457dc20882 Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Mon, 8 May 2017 09:57:40 +0200
+Subject: [PATCH] Enable EIS
+
+---
+ device.mk | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/device.mk b/device.mk
+index e8e6f76..fe88b79 100644
+--- a/device.mk
++++ b/device.mk
+@@ -470,6 +470,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
+ PRODUCT_PROPERTY_OVERRIDES += \
+     ro.product.first_api_level=23
+ 
++# Enable EIS
++PRODUCT_PROPERTY_OVERRIDES += \
++    persist.camera.eis.enable=1 \
++    persist.camera.is_type=4
++
+ # In userdebug, add minidebug info the the boot image and the system server to support
+ # diagnosing native crashes.
+ ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
+-- 
+2.12.2
+
