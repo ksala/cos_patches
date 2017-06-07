@@ -27,6 +27,7 @@ cd "${BUILD_HOME}"
 
 # Install dependencies
 apt-get install git-core unzip
+rm -rf scripts
 git clone https://github.com/akhilnarang/scripts
 cd scripts
 ./setup/ubuntu1604linuxmint18.sh
@@ -39,8 +40,6 @@ sudo install repo /usr/local/bin
 rm repo
 
 # Clone the source
-mkdir source
-cd source
 repo init -u https://github.com/CopperheadOS/platform_manifest.git -b refs/tags/"${VERSION}"
 repo forall -vc "git reset --hard"
 repo sync -j32
@@ -52,12 +51,6 @@ for patch in "${PWD}"/device_lge_bullhead/*.patch; do
 	(
 	  cd "${BUILD_HOME}"/device/lge/bullhead
 		git apply < "${patch}"
-	)
-done
-for patch in "${PWD}"/platform_build/*.patch; do
-	(
-		cd "${BUILD_HOME}"
-		patch -1 < "${patch}"
 	)
 done
 for patch in "${PWD}"/platform_frameworks_base/*.patch; do
