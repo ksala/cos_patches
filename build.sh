@@ -45,39 +45,39 @@ repo forall -vc "git reset --hard"
 repo sync -j32
 
 # Apply patches
+rm -rf cos_patches
 git clone "https://github.com/ksala/cos_patches.git"
 cd cos_patches
 for patch in "${PWD}"/device_lge_bullhead/*.patch; do
+	echo "${patch}"
 	(
 	  cd "${BUILD_HOME}"/device/lge/bullhead
 		git apply < "${patch}"
 	)
 done
 for patch in "${PWD}"/platform_frameworks_base/*.patch; do
+	echo "${patch}"
 	(
 		cd "${BUILD_HOME}"/frameworks/base
 		git apply < "${patch}"
 	)
 done
 for patch in "${PWD}"/platform_frameworks_av/*.patch; do
+	echo "${patch}"
 	(
 		cd "${BUILD_HOME}"/frameworks/av
 		git apply < "${patch}"
 	)
 done
 for patch in "${PWD}"/platform_packages_apps_F-Droid_privileged-extension/*.patch; do
+	echo "${patch}"
 	(
 		cd "${BUILD_HOME}"/packages/apps/F-Droid/privileged-extension
 		git apply < "${patch}"
 	)
 done
 for patch in "${PWD}"/platform_packages_apps_Settings/*.patch; do
-	(
-		cd "${BUILD_HOME}"/packages/apps/Settings
-		git apply < "${patch}"
-	)
-done
-for patch in "${PWD}"/platform_packages_apps_Settings/*.patch; do
+	echo "${patch}"
 	(
 		cd "${BUILD_HOME}"/packages/apps/Settings
 		git apply < "${patch}"
