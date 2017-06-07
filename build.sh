@@ -84,6 +84,7 @@ for patch in "${PWD}"/platform_packages_apps_Settings/*.patch; do
 	)
 done
 wget 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts' -O "${BUILD_HOME}"/system/core/rootdir/etc/hosts
+cd "${BUILD_HOME}"
 
 # Configure CCACHE
 ccache -M 50G
