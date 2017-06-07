@@ -1,0 +1,32 @@
+From 7fcba07bb7d41d723bc435546089480b20faf917 Mon Sep 17 00:00:00 2001
+From: cb <billchen1977@gmail.com>
+Date: Fri, 31 Mar 2017 14:20:07 +0800
+Subject: [PATCH] Fix Miracast(wifi display)
+
+https://www.hastebin.com/qocetibire.rb
+---
+ media/libstagefright/SurfaceMediaSource.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/media/libstagefright/SurfaceMediaSource.cpp b/media/libstagefright/SurfaceMediaSource.cpp
+index 15ff5697d..0e33a85c8 100644
+--- a/media/libstagefright/SurfaceMediaSource.cpp
++++ b/media/libstagefright/SurfaceMediaSource.cpp
+@@ -390,7 +390,7 @@ void SurfaceMediaSource::signalBufferReturned(MediaBuffer *buffer) {
+     buffer_handle_t bufferHandle = getMediaBufferHandle(buffer);
+ 
+     for (size_t i = 0; i < mCurrentBuffers.size(); i++) {
+-        if (mCurrentBuffers[i]->handle == bufferHandle) {
++        if ((buffer_handle_t)mCurrentBuffers[i]->getNativeBuffer() == bufferHandle) {
+             mCurrentBuffers.removeAt(i);
+             foundBuffer = true;
+             break;
+@@ -406,7 +406,7 @@ void SurfaceMediaSource::signalBufferReturned(MediaBuffer *buffer) {
+             continue;
+         }
+ 
+-        if (bufferHandle == mSlots[id].mGraphicBuffer->handle) {
++        if (bufferHandle == (buffer_handle_t)mSlots[id].mGraphicBuffer->getNativeBuffer()) {
+             ALOGV("Slot %d returned, matches handle = %p", id,
+                     mSlots[id].mGraphicBuffer->handle);
+ 

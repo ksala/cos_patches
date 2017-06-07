@@ -1,0 +1,27 @@
+From 273fbe91e42c745443ca06cf2548531fc29532c9 Mon Sep 17 00:00:00 2001
+From: Kabir Sala <kabirsala@airmail.cc>
+Date: Tue, 6 Jun 2017 20:52:52 -0400
+Subject: [PATCH] Enable miracast
+
+---
+ device.mk | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/device.mk b/device.mk
+index fe88b79..e86ebfa 100644
+--- a/device.mk
++++ b/device.mk
+@@ -436,6 +436,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
+ PRODUCT_PROPERTY_OVERRIDES += \
+     ro.camera.notify_nfc=1
+ 
++PRODUCT_PROPERTY_OVERRIDES += \
++    persist.debug.wfd.enable=1
++
++
+ # Power HAL
+ PRODUCT_PACKAGES += \
+     power.bullhead \
+-- 
+2.13.0
+
